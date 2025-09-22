@@ -2,7 +2,6 @@ import re
 
 
 def to_ipa(word):
-    print(word)
     try:
         word = word.strip()
         word = re.sub(r'\d', '', word)
@@ -90,11 +89,9 @@ def to_ipa(word):
         if re.search(r'Э́|э́', word):
             word = re.sub(r'Э́|э́', "-'ʔe", word)
         word = re.sub(r'Э|э', '-ʔe', word)
-        print(word)
         word = word[1::]
         VOWELS = 'aeiouɨ'
         segments = word.split('-')
-        print(segments)
         new_segments = []
         for previous, current in zip(segments, segments[1:]):
             if previous[0] in VOWELS and current[0] in VOWELS:
@@ -121,4 +118,5 @@ def fix_m_accent(text):
         vowel_accented = vowel_accent[cluster[0]]
         text = re.sub(cluster, vowel_accented, text)
     return text
+
 
