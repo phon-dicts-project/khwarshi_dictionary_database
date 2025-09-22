@@ -122,10 +122,3 @@ def fix_m_accent(text):
         text = re.sub(cluster, vowel_accented, text)
     return text
 
-
-if __name__ == '__main__':
-    #print(to_ipa('АБААЗИНА́/В'))
-    #print(to_ipa("АЛУКIА-КА́IБАI"))
-    #print(re.sub('[̃̃\- ̃:ʰ\']', '', "a-l-u-k’-a-kʰ-'a-ˁ-b-a-ˁ"))
-    print(to_ipa('АᵸШЕ́НКЬО//АᵸШЕ́КЬО'))
-    print(fix_m_accent('V (-им) вечность, целая вечность; ито йу абади'))
